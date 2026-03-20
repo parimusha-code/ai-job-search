@@ -4,11 +4,6 @@ import FirecrawlApp from "@mendable/firecrawl-js";
 
 export async function POST(req: Request) {
     try {
-        // Ensure user is authenticated
-        const session = await getServerSession();
-        if (!session) {
-            return NextResponse.json({ message: "Unauthorized. Please sign in." }, { status: 401 });
-        }
 
         const { query } = await req.json();
 
