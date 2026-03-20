@@ -42,7 +42,7 @@ export default function HubPage() {
             {/* Hero Section */}
             <div className="text-center max-w-4xl mb-24">
                 <h1 className="text-6xl sm:text-7xl font-bold mb-8 tracking-tight leading-tight">
-                    Your Projects,<br />Unified.
+                    Your Career Hub,<br />Unified.
                 </h1>
                 <p className="text-xl sm:text-2xl text-gray-400 font-medium leading-relaxed max-w-3xl mx-auto">
                     Access your productivity tools, media utilities, and career trackers from a single interconnected ecosystem.
@@ -80,7 +80,7 @@ export default function HubPage() {
             </div>
 
             <footer className="mt-32 text-gray-600 font-medium tracking-tight">
-                <p>© 2024 Career Suite All-in-One Dashboard</p>
+                <p>© 2024 AI Career Suite All-in-One Dashboard • Unified Task Hub</p>
             </footer>
         </div>
     );
