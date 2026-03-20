@@ -58,14 +58,14 @@ export default function NotesPage() {
                             {notes.map((n, idx) => (
                                 <li
                                     key={idx}
-                                    className="bg-gradient-to-r from-cyan-50 to-blue-50 border border-blue-100 rounded-xl px-4 py-3 text-gray-800 text-sm shadow-sm flex justify-between items-start"
+                                    className="bg-white border border-blue-100 rounded-xl px-4 py-3 text-gray-800 text-sm shadow-sm flex justify-between items-center"
                                 >
                                     <span>{n}</span>
                                     <button
                                         onClick={() => setNotes((prev) => prev.filter((_, i) => i !== idx))}
-                                        className="ml-3 text-gray-400 hover:text-red-500 transition-colors flex-shrink-0"
+                                        className="ml-3 px-4 py-2 bg-orange-500 hover:bg-red-600 text-white font-semibold rounded-lg flex-shrink-0 transition-colors"
                                     >
-                                        ✕
+                                        Delete
                                     </button>
                                 </li>
                             ))}
