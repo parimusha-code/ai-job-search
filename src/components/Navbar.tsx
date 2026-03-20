@@ -18,6 +18,9 @@ export default function Navbar() {
                         </Link>
                     </div>
                     <div className="flex items-center space-x-4">
+                        <Link href="/notes" className="text-sm font-semibold text-teal-600 hover:text-teal-800 transition-colors">
+                            📝 Notes
+                        </Link>
                         {session ? (
                             <>
                                 <span className="text-sm text-gray-700">{session.user?.name || session.user?.email}</span>

@@ -38,10 +38,7 @@ export async function POST(req: Request) {
 
         const searchResults = await app.search(searchQuery, {
             limit: 5,
-            pageOptions: {
-                fetchPageContent: false
-            }
-        });
+        }) as any;
 
         if (!searchResults.success) {
             throw new Error(searchResults.error || "Failed to fetch from Firecrawl");
