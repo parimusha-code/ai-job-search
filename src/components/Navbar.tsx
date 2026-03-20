@@ -1,0 +1,44 @@
+"use client";
+
+import { signIn, signOut, useSession } from "next-auth/react";
+import { Briefcase } from "lucide-react";
+import Link from "next/link";
+
+export default function Navbar() {
+    const { data: session } = useSession();
+
+    return (
+        <nav className="bg-white shadow-sm border-b">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between h-16">
+                    <div className="flex items-center">
+                        <Link href="/" className="flex items-center space-x-2">
+                            <Briefcase className="h-8 w-8 text-blue-600" />
+                            <span className="font-bold text-xl text-gray-900">AI Job Search & Career Navigation</span>
+                        </Link>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                        {session ? (
+                            <>
+                                <span className="text-sm text-gray-700">{session.user?.name || session.user?.email}</span>
+                                <button
+                                    onClick={() => signOut()}
+                                    className="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+                                >
+                                    Sign out
+                                </button>
+                            </>
+                        ) : (
+                            <button
+                                onClick={() => signIn("credentials", { callbackUrl: "/" })}
+                                className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+                            >
+                                Sign in
+                            </button>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    );
+}
