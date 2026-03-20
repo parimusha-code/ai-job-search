@@ -1,101 +1,87 @@
 "use client";
 
 import Link from "next/link";
-import { Briefcase, Youtube, FileText, ClipboardList, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function HubPage() {
     const tools = [
         {
-            title: "AI Resume Maker",
-            description: "Build a professional, ATS-optimized resume using AI in minutes.",
-            icon: <FileText className="w-10 h-10 text-pink-500" />,
-            link: "https://ai-resume-builder-iota-peach.vercel.app",
-            external: true,
-            color: "from-pink-50 to-white",
-            borderColor: "border-pink-100",
-            buttonColor: "bg-pink-500 hover:bg-pink-600",
-        },
-        {
-            title: "AI Job Search & Career Navigation",
-            description: "Find your next role faster with AI-powered job board scraping.",
-            icon: <Briefcase className="w-10 h-10 text-blue-500" />,
-            link: "/search",
-            external: false,
-            color: "from-blue-50 to-white",
-            borderColor: "border-blue-100",
-            buttonColor: "bg-blue-600 hover:bg-blue-700",
-        },
-        {
-            title: "AI YouTube Summarizer",
-            description: "Instantly summarize long videos into key takeaways and notes.",
-            icon: <Youtube className="w-10 h-10 text-red-500" />,
-            link: "https://ai-you-tube-summarizer.vercel.app",
-            external: true,
-            color: "from-red-50 to-white",
-            borderColor: "border-red-100",
-            buttonColor: "bg-red-500 hover:bg-red-600",
-        },
-        {
             title: "Notes Saver",
-            description: "A simple, elegant place to store and manage your career notes.",
-            icon: <ClipboardList className="w-10 h-10 text-teal-500" />,
+            description: "Capture, organize, and manage your notes in one secure place.",
             link: "/notes",
             external: false,
-            color: "from-teal-50 to-white",
-            borderColor: "border-teal-100",
-            buttonColor: "bg-teal-500 hover:bg-teal-600",
+        },
+        {
+            title: "YouTube Summarizer",
+            description: "Instantly generate AI summaries from your favorite YouTube videos.",
+            link: "https://ai-you-tube-summarizer.vercel.app",
+            external: true,
+        },
+        {
+            title: "Job Search",
+            description: "Find, track, and apply to your dream jobs with ease.",
+            link: "/search",
+            external: false,
+        },
+        {
+            title: "AI Resume Maker",
+            description: "Craft perfect, ATS-friendly resumes with AI-driven suggestions.",
+            link: "https://ai-resume-builder-iota-peach.vercel.app",
+            external: true,
         },
     ];
 
     return (
-        <div className="min-h-screen bg-slate-50 py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-6xl mx-auto">
-                <div className="text-center mb-16">
-                    <h1 className="text-5xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                        AI Multi-Tool <span className="text-blue-600">Career Suite</span>
-                    </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Everything you need for your modern career journey, all in one simplified and AI-powered dashboard.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {tools.map((tool, idx) => (
-                        <div
-                            key={idx}
-                            className={`group bg-gradient-to-br ${tool.color} p-8 rounded-3xl border ${tool.borderColor} shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden flex flex-col justify-between h-full min-h-[250px]`}
-                        >
-                            <div className="relative z-10">
-                                <div className="mb-6 p-4 bg-white rounded-2xl shadow-sm inline-block">
-                                    {tool.icon}
-                                </div>
-                                <h3 className="text-2xl font-bold text-gray-900 mb-3">{tool.title}</h3>
-                                <p className="text-gray-600 text-lg leading-relaxed mb-8">
-                                    {tool.description}
-                                </p>
-                            </div>
-
-                            <div className="relative z-10 mt-auto">
-                                <Link
-                                    href={tool.link}
-                                    target={tool.external ? "_blank" : "_self"}
-                                    className={`inline-flex items-center px-6 py-3 rounded-xl text-white font-bold text-lg shadow-md transition-all duration-300 ${tool.buttonColor}`}
-                                >
-                                    Open Tool
-                                    <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                                </Link>
-                            </div>
-
-                            {/* Decorative background circle */}
-                            <div className="absolute -right-12 -bottom-12 w-48 h-48 bg-gray-900/5 rounded-full blur-3xl group-hover:bg-gray-900/10 transition-colors pointer-events-none"></div>
-                        </div>
-                    ))}
-                </div>
-
-                <footer className="mt-20 text-center text-gray-500">
-                    <p>© 2024 AI Multi-Tool Career Suite • Final Week Project Submission</p>
-                </footer>
+        <div className="min-h-screen bg-[#0a0a0a] text-white flex flex-col items-center py-20 px-6 sm:px-10">
+            {/* Top Pill */}
+            <div className="inline-flex items-center space-x-2 bg-[#1a1a1a] px-4 py-1.5 rounded-full border border-white/10 mb-10">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                <span className="text-xs font-medium text-gray-400 tracking-wide uppercase">All-in-One Dashboard</span>
             </div>
+
+            {/* Hero Section */}
+            <div className="text-center max-w-4xl mb-24">
+                <h1 className="text-6xl sm:text-7xl font-bold mb-8 tracking-tight leading-tight">
+                    Your Projects,<br />Unified.
+                </h1>
+                <p className="text-xl sm:text-2xl text-gray-400 font-medium leading-relaxed max-w-3xl mx-auto">
+                    Access your productivity tools, media utilities, and career trackers from a single interconnected ecosystem.
+                </p>
+            </div>
+
+            {/* Tools Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-7xl">
+                {tools.map((tool, idx) => (
+                    <div
+                        key={idx}
+                        className="group bg-[#141414] p-10 rounded-[40px] border border-white/5 hover:border-white/20 transition-all duration-500 hover:bg-[#1a1a1a] flex flex-col h-full min-h-[300px]"
+                    >
+                        <div className="flex-1">
+                            <h3 className="text-3xl font-bold mb-5 tracking-tight group-hover:text-emerald-400 transition-colors">
+                                {tool.title}
+                            </h3>
+                            <p className="text-lg text-gray-400 leading-relaxed font-medium">
+                                {tool.description}
+                            </p>
+                        </div>
+
+                        <div className="mt-10">
+                            <Link
+                                href={tool.link}
+                                target={tool.external ? "_blank" : "_self"}
+                                className="inline-flex items-center text-gray-300 hover:text-white font-semibold text-lg transition-colors group/link"
+                            >
+                                Open App
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+            </div>
+
+            <footer className="mt-32 text-gray-600 font-medium tracking-tight">
+                <p>© 2024 Career Suite All-in-One Dashboard</p>
+            </footer>
         </div>
     );
 }
