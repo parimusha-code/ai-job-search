@@ -14,7 +14,7 @@ export default function HubPage() {
         {
             title: "YouTube Summarizer",
             description: "Instantly generate AI summaries from your favorite YouTube videos.",
-            link: "https://ai-you-tube-summarizer.vercel.app",
+            link: "https://ai-you-tube-summarizer-rdwg.vercel.app",
             external: true,
         },
         {
@@ -22,12 +22,6 @@ export default function HubPage() {
             description: "Find, track, and apply to your dream jobs with ease.",
             link: "/search",
             external: false,
-        },
-        {
-            title: "AI Resume Maker",
-            description: "Craft perfect, ATS-friendly resumes with AI-driven suggestions.",
-            link: "https://ai-resume-builder-iota-peach.vercel.app",
-            external: true,
         },
     ];
 

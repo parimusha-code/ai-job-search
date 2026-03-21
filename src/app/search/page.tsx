@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Search, MapPin, Briefcase, Loader2 } from "lucide-react";
 import { useSession } from "next-auth/react";
+import Link from "next/link";
 
 type JobResult = {
   title?: string;
@@ -63,9 +64,9 @@ export default function Home() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-white min-h-screen">
       {/* Back Link */}
-      <a href="http://localhost:3000/dashboard" className="inline-flex items-center text-blue-600 font-bold hover:underline mb-8">
+      <Link href="/" className="inline-flex items-center text-blue-600 font-bold hover:underline mb-8">
         <span className="mr-2">&larr;</span> Back to Dashboard
-      </a>
+      </Link>
 
       {/* Main Title */}
       <h1 className="text-4xl sm:text-5xl font-bold text-blue-600 leading-tight mb-10">
