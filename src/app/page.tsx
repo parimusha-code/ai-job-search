@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, StickyNote, Youtube, Briefcase } from "lucide-react";
 
 export default function HubPage() {
     const tools = [
@@ -10,18 +10,24 @@ export default function HubPage() {
             description: "Capture, organize, and manage your notes in one secure place.",
             link: "/notes",
             external: false,
+            icon: StickyNote,
+            color: "bg-cyan-500",
         },
         {
             title: "YouTube Summarizer",
             description: "Instantly generate AI summaries from your favorite YouTube videos.",
             link: "https://ai-you-tube-summarizer-rdwg.vercel.app",
             external: true,
+            icon: Youtube,
+            color: "bg-red-500",
         },
         {
             title: "Job Search",
             description: "Find, track, and apply to your dream jobs with ease.",
             link: "/search",
             external: false,
+            icon: Briefcase,
+            color: "bg-blue-500",
         },
     ];
 
@@ -51,6 +57,9 @@ export default function HubPage() {
                         className="group bg-[#141414] p-10 rounded-[40px] border border-white/5 hover:border-white/20 transition-all duration-500 hover:bg-[#1a1a1a] flex flex-col h-full min-h-[300px]"
                     >
                         <div className="flex-1">
+                            <div className={`${tool.color} w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-500/10`}>
+                                <tool.icon className="w-7 h-7 text-white" />
+                            </div>
                             <h3 className="text-3xl font-bold mb-5 tracking-tight group-hover:text-emerald-400 transition-colors">
                                 {tool.title}
                             </h3>
